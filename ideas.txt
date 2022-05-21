@@ -25,6 +25,8 @@
 
 -Don't forget to document all the code!
 
+-Add the README.md
+
 Think if worth the time:
 -add local storage for the cartItems, qty, TotalPrice, TotalQuantity?
 
