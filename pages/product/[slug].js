@@ -1,6 +1,7 @@
 //External Imports
 import { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import Head from 'next/head';
 
 //LocalImports
 import { useStateContext } from '../../context/StateContext';
@@ -25,6 +26,9 @@ const ProductDetails = ({ product, products }) => {
 
   return (
     <div>
+      <Head>
+        <title>{product.name}</title>
+      </Head>
       <div className='product-detail-container'>
 
         {/* Main Image && Carrousel */}
