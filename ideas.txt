@@ -1,8 +1,6 @@
 -Limit the number of products recovered from the DB (specially for recommended items inside the [slug].js pages)
   -Limitar el carusel a 5 items? (que sean de la misma categoria)
 
--Se podria agregar una transicion al carrito cuando lo abrimos
-
 -Search functionality? (besides displaying everything in the front page in a carusel way)
   (se podria agregar en el navbar, justo en el medio)
 

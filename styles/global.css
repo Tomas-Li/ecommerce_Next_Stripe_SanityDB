@@ -282,14 +282,16 @@ text-align: end;
 }
 .cart-wrapper{
   width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   right: 0;
   top: 0;
   z-index: 100;
-  /* will-change: transform; */
+  transform: translateX(100%);
   transition: all 1s ease-in-out;
-
+}
+.translation{
+  transform: translateX(0%);
+  background: rgba(0, 0, 0, 0.5);
 }
 .cart-container{
   height: 100vh;
