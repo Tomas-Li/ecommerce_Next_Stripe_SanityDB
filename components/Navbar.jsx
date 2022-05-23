@@ -12,13 +12,14 @@ const Navbar = () => {
 
   return (
     <div className="navbar-container">
-      <p className='logo'>
-        <Link href={'/'}>
-          <a>Master Musician Store</a>
-        </Link>
-      </p>
+      <Link href={'/'}>
+        <div className='logo-container'>
+          <img src='/BigLogo.png' height={25} alt='logo-img' />
+          <a className='logo-name'>Master Musician Store</a>
+        </div>
+      </Link>
       <button type="button" className='cart-icon' onClick={() => setShowCart(!showCart)}>
-        <AiOutlineShopping />
+        <AiOutlineShopping fontSize={35} />
         <span className='cart-item-qty'>{totalQuantities}</span>
       </button>
 

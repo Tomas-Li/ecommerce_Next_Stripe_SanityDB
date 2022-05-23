@@ -1,35 +1,34 @@
--Buscar productos en ML y remover los fondos de las imagenes, luego generar un listado de productos de prueba
-
--Arreglar el Header y Footer (La imagen se superpone al texto + explota a cierto cambio de tamaño)
-  -Intentar hacerla responsive with max-height o max-width
-
--Change all the <img> for the <Image> component from Next!
-
--Add an favicon to the page: https://stackoverflow.com/questions/56213019/how-to-add-a-favicon-to-a-next-js-static-site
-
--Make the twitter and instagram accounts (and enable links to them inside the Footer component)
-
 -Limit the number of products recovered from the DB (specially for recommended items inside the [slug].js pages)
-
--Arreglar el "Logo" de la pagina, de momento solo es un texto con un link asociado...
-
--Cambiar el input de la db que dice "FINE" ... que es eso???
+  -Limitar el carusel a 5 items? (que sean de la misma categoria)
 
 -Se podria agregar una transicion al carrito cuando lo abrimos
 
--Hay un bug minimo cuando actualizamos el carrito agregando mas productos desde ahi. Esto pasa porque estamos removiendo el item original ya agregandolo al final del carro, tendriamos que actualizarlo en la misma ubicacion. 
-
 -Search functionality? (besides displaying everything in the front page in a carusel way)
-
--Cambiar las currencies en strip (dashboard, costos de envio y en api/stripe). Actualmente paso valores de pesos a los que stripe entiende a dolares...
+  (se podria agregar en el navbar, justo en el medio)
 
 -Don't forget to document all the code!
 
--Add the README.md
+-Update the README.md (user de referencia el readme del proyeto original)
 
+
+------------------------------
 Think if worth the time:
+-Make the twitter and instagram accounts (and enable links to them inside the Footer component)
+
 -add local storage for the cartItems, qty, TotalPrice, TotalQuantity?
 
 -Add catergory to the DB, and base the recomendations in this category (the query should use the category section as a part of the query for products inside [slug].js)
 
 -Recover the review score from the DB? (Worst part is that I'm not using MUI so I would have to make the interactive icon review by myself... it could be a double loop and a math.round, based on that it decides how many fill and uoutlined stars it shows!) (For the DB, inside the Product category just add another input called review that is of kind number)
+
+-<title> should be changed in everypage with ${name}
+
+-Sistema de aplicacion de descuentos? Hay que pensar:
+  *Como se eligen los productos que se ven afectados? Categoria?
+  *Como puedo hacer un query que reduzca (y luego aumente) los porcentages en esta DB?
+
+------------------------------------------
+Investigar:
+-El uso de <Image> en lugar de <img>
+  worth it?
+  Hacer un reemplazo como tal no funciona, ver porque

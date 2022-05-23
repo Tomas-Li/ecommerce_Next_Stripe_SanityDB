@@ -17,8 +17,8 @@ export default async function handler(req, res) {
         billing_address_collection: 'auto',
         //shipping_options should be also created in our account!
         shipping_options: [
-          { shipping_rate: 'shr_1L1ypFH3hwBwcSujhwt6K5V9'},
-          { shipping_rate: 'shr_1L1ypnH3hwBwcSujfGYL5jl6'},
+          { shipping_rate: 'shr_1L2B5FH3hwBwcSujoOFc6xiy'},
+          { shipping_rate: 'shr_1L2B5tH3hwBwcSujLG1MzdHD'},
         ],
 
         line_items: req.body.map((item) => {
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
           return {
             price_data: {
-              currency: 'usd',
+              currency: 'ars',
               product_data: {
                 name: item.name,
                 images: [newImage],

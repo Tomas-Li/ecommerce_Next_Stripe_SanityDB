@@ -10,7 +10,7 @@ const Home = ({ products, bannerData }) => {
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
-        <p>Speakers of many variations</p>
+        <p style={{paddingTop: '10px'}}>Feel the music as you have never felt it before</p>
       </div>
 
       <div className="products-container">

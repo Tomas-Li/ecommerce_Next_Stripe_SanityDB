@@ -30,14 +30,15 @@ const ProductDetails = ({ product, products }) => {
         {/* Main Image && Carrousel */}
         <div>
           <div>
-            <img className='product-detail-image' src={urlFor(image && image[index])} />
+            <img className='product-detail-image' src={urlFor(image && image[index])} alt="main product image" />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
-                key={i}
+                key={item._key}
+                alt={`image ${i}`}
                />
             ))}
             {/* onMouseEnter is used to change the image being show when hovering over an image in the carrousel! */}
