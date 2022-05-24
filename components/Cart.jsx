@@ -10,7 +10,11 @@ import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
+/**
+ * Cart Component. Called from NavBar. Is an Sticky screen that transitions from outside the screen into the page. It's information is constantly being updated and is all being stored in the Context API.
+ */
 const Cart = () => {
+  //Hooks
   const cartRef = useRef();
   const { totalPrice,
      totalQuantities, 
@@ -20,6 +24,12 @@ const Cart = () => {
      toggleCartItemQuantity, 
      onRemove } = useStateContext();
 
+  /**
+   * Main objective is to redirect us to the Cehckout if everything works well with Stripe.
+   * First it calls a Stripe Promise from lib/getStripe/getStripe().
+   * Then it fetches the Stripe Session data from pages/api/stripe.
+   * If everything went correctly, we pass our session to our Promise and we get redirected to the Checkout.
+   */
   const handleCheckout = async () => {
     const stripe = await getStripe();
 

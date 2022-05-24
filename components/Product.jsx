@@ -3,8 +3,10 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
-//todo{The image should be resized with max-width / max-height to not break the proportions}
-
+/**
+ * Component for showing a product RECOMMENDATIONS
+ * @param {Object} product - Has the product information from the DB (category, name, slug, price, description) 
+ */
 const Product = ({ product: {image, name, slug, price} }) => {
   return (
     <div>

@@ -1,8 +1,13 @@
+//Internal imports
 import { Product, FooterBanner, HeroBanner} from '../components'
 
 //DB
 import { client } from '../lib/client';
 
+/**
+ * Main page of the application
+ * @param {Object} param0 - Contains 10 products and the banner data from the DB
+ */
 const Home = ({ products, bannerData }) => {
   return (
     <>
@@ -22,6 +27,10 @@ const Home = ({ products, bannerData }) => {
   )
 }
 
+/**
+ * In charge of recovering 10 products from the DB and the Banner information
+ * @returns {Object} - {products, bannerData}
+ */
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"][0...10]';
   const products = await client.fetch(query); //We recover all the products

@@ -1,8 +1,26 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState } from "react";
 import { toast } from "react-hot-toast"; //this will take care of the notifications!
 
 const Context = createContext();
 
+/**
+ * Context-State function.
+ * @param {Object} param0 - children
+ * @returns showCart,
+        cartItems,
+        totalPrice,
+        totalQuantities,
+        qty,
+        setShowCart,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities,
+        incQty,
+        decQty,
+        onAdd,
+        toggleCartItemQuantity,
+        onRemove
+ */
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
@@ -24,6 +42,11 @@ export const StateContext = ({ children }) => {
     });
   }
 
+  /**
+   * Function for adding products to the cart. It updates TotalPrice, TotalQuantities, CartItems. It also sends a success alert through Toast
+   * @param {Object} product 
+   * @param {Number} quantity 
+   */
   const onAdd = (product, quantity) => {
     //We have to set the new TotalPrice and TotalQuantity
     setTotalPrice((prev) => prev + product.price * quantity);
@@ -53,9 +76,10 @@ export const StateContext = ({ children }) => {
     toast.success(`${qty} ${product.name} added to the cart.`);
   }
 
-  /*
-  * Function for removing items from the cart
-  * @param {Obj} item - Asociated item.
+
+  /**
+  * Function for removing items from the cart. It updates TotalPrice, TotalQuantities, CartItems
+  * @param {Object} item - Asociated item.
   */  
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id);
@@ -66,10 +90,10 @@ export const StateContext = ({ children }) => {
     setCartItems(newCartItems);
   }
 
-  /*
-  * Function for changing product quantities from inside the cart
-  * @param {number} id - 
-  * @param {string} value - Value/flag passed from the button that decides if we are incrementing or decrementing
+  /**
+  * Function for changing product quantities from inside the cart.
+  * @param {Number} id - 
+  * @param {String} value - Value/flag passed from the button that decides if we are incrementing or decrementing
   */
   const toggleCartItemQuantity = (id, value) => {
     foundProduct = cartItems.find((item) => item._id === id);

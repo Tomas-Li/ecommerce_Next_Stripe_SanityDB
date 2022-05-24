@@ -2,8 +2,10 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
-//todo{Eliminar la imagen del footer o cambiar el className, pero es un asco de momento}
-
+/**
+ * Bottom Banner Component
+ * @param {Object} param0 - gets the Banner Data from the DB as a prop
+ */
 const FooterBanner = ({ footerBanner: {discount, desc, smallText, midText, largeText1, largeText2, saleTime, product, buttonText, image} }) => {
   return (
     <div className='footer-banner-container'>

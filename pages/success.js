@@ -5,10 +5,13 @@ import Link from 'next/link';
 import { useStateContext } from '../context/StateContext'
 import { runFireworks } from '../lib/utils'
 
+/**
+ * Page to show after a successfull transaction
+ */
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
-  //We have to clean Context and the localStorage... and run the fireworks
+  //We have to clean Context and the localStorage, then run the fireworks
   useEffect(() => {
     localStorage.clear();
     setCartItems([]);

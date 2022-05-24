@@ -8,7 +8,10 @@ import { useRouter } from 'next/router';
 import Cart from './Cart';
 import { useStateContext } from '../context/StateContext';
 
-
+/**
+ * Navbar component. Contains Logo; SearchBar; CartIcon+quantity; CART
+ * The Cart component is always rendered and it's outside of the screen (this is with the objective of adding a transition effect to the cart)
+ */
 const Navbar = () => {
   const router = useRouter();
   const [search, setSearch] = useState('');

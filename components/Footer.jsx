@@ -1,6 +1,9 @@
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
 import Link from "next/link";
 
+/**
+ * Footer information Component. Called from <Layout>
+ */
 const Footer = () => {
   return (
     <div className="footer-container">

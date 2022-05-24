@@ -1,5 +1,3 @@
--Don't forget to document all the code!
-
 -Update the README.md (user de referencia el readme del proyeto original)
 
 ------------------------------

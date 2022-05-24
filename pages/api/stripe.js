@@ -5,7 +5,14 @@ import Stripe from 'stripe';
 //Here in the backend we use our Secret_Key for the instance.
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
-
+/**
+ * Main function.
+ * Verifies if the req.method is correct (POST)
+ * Generates params, an object with all the information that Stripe needs to create a payment session.
+ * The stripe instance was generated outside of the function through the Secret-key.
+ * @param {Object} req 
+ * @param {Object} res 
+ */
 export default async function handler(req, res) {
 
   if (req.method === 'POST') {

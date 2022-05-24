@@ -5,6 +5,10 @@ import { Toaster } from 'react-hot-toast'; //This is for the notification pop up
 
 import '../styles/global.css';
 
+/**
+ * Global definition of the pages (See NEXT documentation for more information about this)
+ * @param {Object} param0 - {Component: specifical page component to be rendered, pageProps: props passed through special methods from NEXT}
+ */
 export default function MyApp({ Component, pageProps }) {
   //<Component /> -> This refers to the page component that is being rendered! Like Home when rendering the main page
   return (

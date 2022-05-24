@@ -3,7 +3,10 @@ import Footer from './Footer';
 
 import Navbar from './Navbar';
 
-
+/**
+ * Layout component for defining <Head> (main <title>) and organizing the main layout as <NavBar> - <Specific Component for the page> - <Footer>;
+ * @param {Object} param0 - <Specific Component for the page that is being rendered>
+ */
 const Layout = ({ children }) => {
   return (
     <div className='layout'>

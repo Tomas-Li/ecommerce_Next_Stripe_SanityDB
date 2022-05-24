@@ -8,7 +8,10 @@ import { useStateContext } from '../../context/StateContext';
 import { client, urlFor } from "../../lib/client"
 import { Product } from "../../components";
 
-
+/**
+ * Product's detailed views
+ * @param {Object} param0 - {product: specific product that is being shown, products: array of recomended products based on the category entry from the DB}
+ */
 const ProductDetails = ({ product, products }) => {
   //Context
   const { setShowCart, decQty, incQty, qty, onAdd } = useStateContext();
@@ -19,7 +22,9 @@ const ProductDetails = ({ product, products }) => {
   //Props desctructure
   const { image, name, details, price } = product;
 
-
+  /**
+   * Function that adds an item to the cart and opens it at the same time
+   */
   const handleBuyNow = () => {
     onAdd(product, qty);
     setShowCart(true);
@@ -100,7 +105,13 @@ const ProductDetails = ({ product, products }) => {
   )
 }
 
+
 //I'm using a staticProp in this case because the data should aldready be known as the user is clicking on a Link inside the homePage to get here! That's why we need to make a *getStaticPaths* function so Next can built this pages before-hand
+/**
+ * Function in charge of querrying the specific product of the page that is being shown + a list of products recommendations
+ * @param {object} param0 - We get the slug (DB entry) from the url
+ * @returns {object} props - {product: main product to show, products: array of recomendation products}
+ */
 export const getStaticProps = async ({ params: { slug }}) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const product = await client.fetch(query); //We recover the individual product for the slug
@@ -112,6 +123,7 @@ export const getStaticProps = async ({ params: { slug }}) => {
     props: { product, products }
   }; // This will be received inside our component
 }
+
 
 export const getStaticPaths = async() => {
   const query = `*[_type == "product"]{

@@ -3,6 +3,10 @@ import React from 'react'
 
 import { urlFor } from '../lib/client'
 
+/**
+ * Top Banner Component
+ * @param {Object} param0 - gets the Banner Data from the DB as a prop
+ */
 const HeroBanner = ({ heroBanner }) => {
   return (
     <div className='hero-banner-container'>
