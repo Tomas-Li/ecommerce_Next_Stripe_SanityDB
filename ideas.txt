@@ -1,13 +1,6 @@
--Arreglar estetica del search bar
-
--Una vez search funcione, limitar el numero de prods en la pagina principal
-
--Agregar más headphones y checkear el carrusel (al menos 2 mas)
-
 -Don't forget to document all the code!
 
 -Update the README.md (user de referencia el readme del proyeto original)
-
 
 ------------------------------
 -Make the twitter and instagram accounts (and enable links to them inside the Footer component)

@@ -72,7 +72,7 @@ width: 100%;
 }
 
 /* Useless at the moment, but if we add a lens besides the input it will work fine*/
-.search-container{
+/* .search-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +82,7 @@ width: 100%;
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-}
+} */
 
 .track-short {
   position: absolute;
@@ -94,8 +94,8 @@ width: 100%;
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 20s linear infinite;
-  width: 180%;
+  animation: marquee 15s linear infinite;
+  width: 120%;
 }
 .track:hover {
   animation-play-state: paused;
@@ -103,7 +103,7 @@ width: 100%;
 @keyframes marquee {
   0% {}
   5% { transform: translateX(5%); }
-  50% { transform: translateX(-50%); }
+  50% { transform: translateX(-20%); }
   95% { transform: translateX(5%); }
   100% {}
 }
@@ -113,7 +113,7 @@ width: 100%;
     margin-left: 6px;
 }
 
-.cart-button-container{
+.flex-center{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -873,7 +873,56 @@ margin-top: 160px;
   }
 }
 
-
-
-
 /*Search bar*/
+.search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #000;
+  padding-right: 40px;
+  color:#fff;
+}
+.input-search::placeholder{
+  color:rgba(255,255,255,.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search{
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 25px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:transparent;
+  pointer-events: painted;
+}
+.btn-search:focus ~ .input-search{
+  width: 300px;
+  border-radius: 10px;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 300px;
+  border-radius: 10px;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}

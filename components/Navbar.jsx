@@ -1,6 +1,6 @@
 //External imports
 import { useState } from 'react';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -38,22 +38,22 @@ const Navbar = () => {
           <a className='logo-name'>Master Musician Store</a>
         </div>
       </Link>
-      <div className='search-container'>
-        {/* <div style={{width: '35px', height: '50px'}}>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div> */}
-        <input 
-          className='search-bar' 
-          type='text' 
-          placeholder='search' 
-          value={search} 
-          onChange={handleChange} 
-          onKeyDown={handleKeyDown}
-        />
+      <div className='flex-center'>
+        <div className='search-box'>
+          <button className='btn-search'>
+            <AiOutlineSearch />
+          </button>
+          <input 
+            className='input-search' 
+            type='text' 
+            placeholder='search...' 
+            value={search} 
+            onChange={handleChange} 
+            onKeyDown={handleKeyDown}
+          />
+        </div>
       </div>
-      <div className='cart-button-container'>
+      <div className='flex-center'>
         <button type="button" className='cart-icon' onClick={() => setShowCart(!showCart)}>
           <AiOutlineShopping fontSize={35} />
           <span className='cart-item-qty'>{totalQuantities}</span>
