@@ -26,13 +26,19 @@ width: 100%;
   padding: 10px;
 }
 
-.navbar-container{
+/* .navbar-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px 20px 20px;
   padding: 10px 10px;
   position: relative;
+} */
+.navbar-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10px 20px 20px;
+  padding: 10px 10px;
 }
 .logo-container{
   display: flex;
@@ -65,11 +71,30 @@ width: 100%;
   cursor: pointer;
 }
 
+/* Useless at the moment, but if we add a lens besides the input it will work fine*/
+.search-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.search-bar{
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.track-short {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  width: 100%;
+}
 .track {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 25s linear infinite;
+  animation: marquee 20s linear infinite;
   width: 180%;
 }
 .track:hover {
@@ -88,6 +113,11 @@ width: 100%;
     margin-left: 6px;
 }
 
+.cart-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cart-icon{
   font-size: 25px;
   color: gray;
@@ -111,7 +141,6 @@ width: 100%;
   border-radius: 50%;
   text-align: center;
   font-weight: 600;
-
 }
 .products-container{
   display: flex;
@@ -668,6 +697,11 @@ margin-top: 160px;
   }
 }
 @media screen and (max-width:800px) {
+  .navbar-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .hero-banner-container{
     height: 560px;
   }
@@ -838,3 +872,8 @@ margin-top: 160px;
     gap: 20px;
   }
 }
+
+
+
+
+/*Search bar*/

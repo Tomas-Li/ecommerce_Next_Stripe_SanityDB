@@ -1,8 +1,8 @@
--Limit the number of products recovered from the DB (specially for recommended items inside the [slug].js pages)
-  -Limitar el carusel a 5 items? (que sean de la misma categoria)
+-Arreglar estetica del search bar
 
--Search functionality? (besides displaying everything in the front page in a carusel way)
-  (se podria agregar en el navbar, justo en el medio)
+-Una vez search funcione, limitar el numero de prods en la pagina principal
+
+-Agregar más headphones y checkear el carrusel (al menos 2 mas)
 
 -Don't forget to document all the code!
 
@@ -10,16 +10,11 @@
 
 
 ------------------------------
-Think if worth the time:
 -Make the twitter and instagram accounts (and enable links to them inside the Footer component)
 
 -add local storage for the cartItems, qty, TotalPrice, TotalQuantity?
 
--Add catergory to the DB, and base the recomendations in this category (the query should use the category section as a part of the query for products inside [slug].js)
-
 -Recover the review score from the DB? (Worst part is that I'm not using MUI so I would have to make the interactive icon review by myself... it could be a double loop and a math.round, based on that it decides how many fill and uoutlined stars it shows!) (For the DB, inside the Product category just add another input called review that is of kind number)
-
--<title> should be changed in everypage with ${name}
 
 -Sistema de aplicacion de descuentos? Hay que pensar:
   *Como se eligen los productos que se ven afectados? Categoria?

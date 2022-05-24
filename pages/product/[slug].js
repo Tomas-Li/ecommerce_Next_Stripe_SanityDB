@@ -19,6 +19,7 @@ const ProductDetails = ({ product, products }) => {
   //Props desctructure
   const { image, name, details, price } = product;
 
+
   const handleBuyNow = () => {
     onAdd(product, qty);
     setShowCart(true);
@@ -90,7 +91,7 @@ const ProductDetails = ({ product, products }) => {
       <div className="maylike-products-wrapper">
         <h2>You may also like!</h2>
         <div className="marquee">
-          <div className="maylike-products-container track">
+          <div className={`maylike-products-container ${products.length<=5 ? 'track-short' : 'track'}`}>
             {products.map((item) => (<Product key={item._id} product={item} />))}
           </div>
         </div>
@@ -102,9 +103,9 @@ const ProductDetails = ({ product, products }) => {
 //I'm using a staticProp in this case because the data should aldready be known as the user is clicking on a Link inside the homePage to get here! That's why we need to make a *getStaticPaths* function so Next can built this pages before-hand
 export const getStaticProps = async ({ params: { slug }}) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productsQuery = '*[_type == "product"]';
-
   const product = await client.fetch(query); //We recover the individual product for the slug
+  
+  const productsQuery = `*[_type == "product" && category == '${product.category}']`;
   const products = await client.fetch(productsQuery); //We recover all the products
 
   return {
